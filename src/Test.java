@@ -1,7 +1,7 @@
 public class Test {
 
     public static void main(String[] args) {
-        String filePath = ".\\data\\test3.txt";
+        String filePath = "src\\data\\test3.txt";
         Graph ug = new UnGraph(); // đồ thị vô hướng
         Graph du = new DirGraph();// đồ thị có hướng
         ug.loadData(filePath);
