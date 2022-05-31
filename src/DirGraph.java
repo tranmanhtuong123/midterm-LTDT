@@ -1,5 +1,5 @@
 public class DirGraph extends Graph {
-    // có vô hướng
+    // đồ thị có hướng
 
     @Override
     public boolean addEdge(int x, int y) {
