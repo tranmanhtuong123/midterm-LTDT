@@ -37,6 +37,9 @@ public abstract class Graph {
     // tính tổng các cạnh
     public abstract int numbDegree();
 
+    // kiểm tra tính liên thông của đồ thị
+    public abstract boolean isConnect();
+
     // thêm đỉnh cho đồ thị
     public boolean addTop() {
         try {

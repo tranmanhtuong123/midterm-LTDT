@@ -1,7 +1,7 @@
 public class Test {
 
     public static void main(String[] args) {
-        String filePath = "src\\data\\test3.txt";
+        String filePath = "src\\data\\test2.txt";
         Graph ug = new UnGraph(); // đồ thị vô hướng
         Graph du = new DirGraph();// đồ thị có hướng
         ug.loadData(filePath);
@@ -9,6 +9,16 @@ public class Test {
 
         System.out.println("loadData from file .txt:");
         ug.viewMatrix(ug.arr);
+
+        // DFS - BFS
+        // ug.DFS(0);
+        // ug.printArr(ug.listVisit);
+        // ug.DFSNotRecursive(0);
+        // ug.BFS(0);
+
+        // Tính liên thông của đồ thị
+        // System.out.println(ug.isConnect());
+        // System.out.println(du.isConnect());
 
         // Thêm Và Xóa Cạnh Cho Đồ Thị
         // System.out.println("add Edge:");
@@ -36,13 +46,7 @@ public class Test {
         // System.out.println(du.numbDegree());
         // System.out.println(du.allTopDegree());
 
-        // DFS - BFS
-        // ug.DFS(0);
-        // ug.printArr(ug.listVisit);
-        // ug.DFSNotRecursive(0);
-        // ug.BFS(0);
-
         // Dijkstra algo
-        ug.dijkstra(ug.arr, 0);
+        // ug.dijkstra(ug.arr, 0);
     }
 }

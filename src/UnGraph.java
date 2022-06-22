@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Stack;
+
 public class UnGraph extends Graph {
     // đồ thị vô hướng
 
@@ -48,6 +51,40 @@ public class UnGraph extends Graph {
     @Override
     public int numbDegree() {
         return allTopDegree() / 2;
+    }
+
+    @Override
+    public boolean isConnect() {
+        int i = 0;
+        int numVertex = topNum();
+        int vs[] = new int[numVertex];
+        ArrayList<Integer> listVS = new ArrayList<>();
+        Stack<Integer> stack = new Stack<>();
+        listVS.add(i);
+        vs[i] = 1;
+        stack.push(i);
+        while (!stack.empty()) {
+            i = stack.peek();
+            int count = 0;
+            for (int j = 0; j < vs.length; j++) {
+                if (this.arr[i][j] > 0 && vs[j] != 1) {
+                    vs[j] = 1;
+                    listVS.add(j);
+                    stack.push(j);
+                    break;
+                } else {
+                    count++;
+                }
+            }
+            if (count == visit.length) {
+                stack.pop();
+            }
+        }
+        for (int k = 0; k < vs.length; k++) {
+            if (vs[k] != 1)
+                return false;
+        }
+        return true;
     }
 
 }
